@@ -38,11 +38,11 @@ spec:
               containerPort: {{ .Values.ports.containerport }}
               protocol: {{ .Values.ports.protocol }}
           livenessProbe:
-            tcpSocket:
+            httpGet:
               path: {{ .Values.liveness.path }}
               port: {{ .Values.liveness.port }}
           readinessProbe:
-            tcpSocket:
+            httpGet:
               path: {{ .Values.readiness.path }}
               port: {{ .Values.readiness.port }}
           resources:
