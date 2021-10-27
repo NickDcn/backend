@@ -38,7 +38,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 80
+  port: 5500
 
 ingress:
   enabled: true
@@ -87,9 +87,9 @@ ports:
   protocol: TCP
 
 liveness:
-  path: /auth/hello
+#  path: /auth/hello
   port: http
 
 readiness:
-  path: /auth/hello
+#  path: /auth/hello
   port: http
