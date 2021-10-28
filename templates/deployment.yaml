@@ -38,12 +38,10 @@ spec:
               containerPort: {{ .Values.ports.containerport }}
               protocol: {{ .Values.ports.protocol }}
           livenessProbe:
-            httpGet:
-              path: {{ .Values.liveness.path }}
+            tcpSocket:
               port: {{ .Values.liveness.port }}
           readinessProbe:
-            httpGet:
-              path: {{ .Values.readiness.path }}
+            tcpSocket:
               port: {{ .Values.readiness.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
